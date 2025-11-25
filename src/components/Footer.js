@@ -19,7 +19,6 @@ function Footer() {
               />
               <h5 className="mb-0 fw-bold text-white">FrontEnd</h5>
             </div>
-            {/* CAMBIO: Usamos 'text-white-50' para que sea legible sobre fondo oscuro */}
             <p className="text-white-50 small">
               Conectando la tecnología con cada rincón de Argentina. 
               Calidad, garantía y envíos a todo el país.
@@ -45,19 +44,12 @@ function Footer() {
             </ul>
           </Col>
 
-          {/* COLUMNA 3: DATOS REALES */}
+          {/* COLUMNA 3: DATOS DE CONTACTO */}
           <Col md={4}>
             <h5 className="mb-3 text-white">Contacto</h5>
-            <p className="text-white-50 small">
-              <i className="fas fa-map-marker-alt me-2"></i>Av. de las Américas 2500, Paraná<br />
-              <span className="ms-4">Entre Ríos, Argentina</span>
-            </p>
-            <p className="text-white-50 small">
-              <i className="fas fa-envelope me-2"></i>info@frontend.com.ar
-            </p>
-            <p className="text-white-50 small">
-              <i className="fas fa-phone me-2"></i>(+54) 343 123-4567
-            </p>
+            <p className="text-white-50 small mb-1">📍 Av. Siempre Viva 456, Paraná</p>
+            <p className="text-white-50 small mb-1">📧 info@frontend.com.ar</p>
+            <p className="text-white-50 small">📞 (+54) 343 123-4567</p>
           </Col>
         </Row>
 

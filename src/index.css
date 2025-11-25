@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap');
+
+body {
+  font-family: 'Outfit', sans-serif; /* Aplicamos la fuente */
+  background-color: #f8f9fa; /* Gris muy suave de fondo para que resalten las cards */
+}
+
+/* 2. Clase para efectos en las Tarjetas */
+.card-hover {
+  transition: all 0.3s ease-in-out; /* Suaviza la animación */
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px); /* Sube 5 pixeles */
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.15)!important; /* Sombra más profunda */
+  border-color: #0d6efd; /* Borde azul al pasar el mouse */
+}
+
+/* 3. Links del Footer y Navbar */
+.hover-link {
+  transition: color 0.2s;
+}
+.hover-link:hover {
+  color: #0d6efd !important; /* Se ilumina al pasar el mouse */
+  text-decoration: underline !important;
+}

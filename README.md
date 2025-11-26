@@ -2,7 +2,8 @@
 
 **Materia:** Desarrollo de Sistemas Web (Front End)
 
-**Alumno:** Sergio Daniel de los Santos
+**Alumnos:**  - Sergio Daniel de los Santos
+              - Diego Moreno Rico
 
 **Fecha:** Noviembre 2025
 

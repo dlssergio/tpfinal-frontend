@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# FrontEnd - Tienda de Tecnología
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Materia:** Desarrollo de Sistemas Web (Front End)
 
-## Available Scripts
+**Alumno:** Sergio Daniel de los Santos
 
-In the project directory, you can run:
+**Fecha:** Noviembre 2025
 
-### `npm start`
+## 1. Descripción General
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**FrontEnd** es una *Single Page Application* (SPA) desarrollada con **React.js** que simula un comercio electrónico de productos tecnológicos. La aplicación ofrece una experiencia de usuario fluida para navegar, explorar productos filtrados por categorías, ver detalles, gestionar un carrito de compras y enviar consultas a través de un formulario validado.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+El proyecto demuestra la implementación práctica de conceptos clave como el consumo de APIs REST, enrutamiento dinámico, gestión de estado global y validación de formularios.
 
-### `npm test`
+## 2. Tecnologías y Herramientas Utilizadas
+El desarrollo se basó en el siguiente stack tecnológico:
+ - **Core:** `React 18` (iniciado con Create React App).
+ - **Enrutamiento:** `react-router-dom` (v6) para la navegación tipo SPA.
+ - **Interfaz de Usuario:**
+   - `Bootstrap 5` y `React-Bootstrap` para el diseño responsivo y componentes.
+   - **CSS Personalizado:** Estilos para efectos visuales, transiciones y tipografía moderna ('Outfit').
+   - `SweetAlert2`: Para alertas modales interactivas y feedback visual.
+ - **Comunicación con API:** `Axios` para realizar peticiones HTTP asíncronas.
+ - **Estado Global:** Context API de React para la gestión del carrito de compras.
+ - **Formularios:**
+   - `Formik`: Para el manejo del estado de los formularios.
+   - `Yup`: Para la validación de esquemas y mensajes de error.
+  
+## 3. Origen de los Datos
+Para asegurar la funcionalidad y evitar problemas de CORS, se utilizaron las siguientes fuentes:
+ - **API de Productos: DummyJSON** (`https://dummyjson.com`).
+   - Se consumen endpoints para obtener listados por categoría (`/products/category/{category}`) y detalles de productos individuales (`/products/{id}`).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ - **Recursos Estáticos:** Imágenes de banners y logos servidos localmente desde `/public/img` para un control visual preciso y sin dependencias externas.
 
-### `npm run build`
+## 4. Arquitectura del Proyecto
+La estructura de carpetas está organizada para facilitar la escalabilidad y el mantenimiento:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src/
+├── components/   # Componentes reutilizables (NavBar, Footer, ProductCard)
+├── context/      # Lógica del estado global (CartContext)
+├── pages/        # Vistas principales (Home, Catalogo, DetalleProducto, Carrito, Contacto)
+├── utils/        # Configuraciones y constantes (categorias.js, mockData.js)
+└── App.js        # Configuración principal de rutas y proveedores
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 5. Funcionalidades Clave
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### A. Navegación y Rutas Dinámicas
+Implementación de BrowserRouter con rutas dinámicas:
+ - `/categoria/:idCategoria`: Reutiliza el componente Catalogo para mostrar diferentes productos según el parámetro de la URL.
+ - `/producto/:id`: Carga dinámicamente el detalle de un producto específico.
 
-### `npm run eject`
+### B. Carrito de Compras (Estado Global)
+Sistema de carrito robusto implementado con Context API:
+ - **Persistencia:** Los datos del carrito se guardan en `localStorage` para no perderse al recargar.
+ - **Funciones:** Agregar, eliminar, vaciar carrito y cálculo automático de totales.
+ - **Acceso Global:** El estado del carrito es accesible desde cualquier componente, permitiendo mostrar el contador de items en el `NavBar`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### C. Manejo de Errores y Carga
+Uso de Hooks (`useEffect`, `useState`) para gestionar el ciclo de vida de las peticiones asíncronas. Se implementaron estrategias de "Fallback" (datos de respaldo) y alertas visuales para manejar fallos en la API de manera amigable para el usuario.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### D. Formulario de Contacto
+Formulario en la ruta `/contacto` con validación en tiempo real gracias a **Formik** y **Yup**. Incluye feedback visual de éxito con **SweetAlert2** al enviar el formulario correctamente.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 6. Despliegue
+El proyecto está optimizado para producción y listo para ser desplegado en plataformas como Netlify. Se incluye configuración de redirección para SPA.
 
-## Learn More
+### Ejecución Local
+Si deseas correr este proyecto en tu máquina:
+1. Clonar el repositorio:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+git clone https://github.com/dlssergio/tpfinal-frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
+2. Instalar dependencias:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+npm install
 
-### Analyzing the Bundle Size
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Iniciar el servidor:
 
-### Making a Progressive Web App
+```
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
 
-### Advanced Configuration
+4. Abrir en el navegador: `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

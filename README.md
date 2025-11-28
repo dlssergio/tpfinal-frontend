@@ -21,6 +21,7 @@ El desarrollo se basó en el siguiente stack tecnológico:
    - `Bootstrap 5` y `React-Bootstrap` para el diseño responsivo y componentes.
    - **CSS Personalizado:** Estilos para efectos visuales, transiciones y tipografía moderna ('Outfit').
    - `SweetAlert2`: Para alertas modales interactivas y feedback visual.
+   - `canvas-confetti`: Librería para efectos visuales de celebración.
  - **Comunicación con API:** `Axios` para realizar peticiones HTTP asíncronas.
  - **Estado Global:** Context API de React para la gestión del carrito de compras.
  - **Formularios:**
@@ -64,6 +65,13 @@ Uso de Hooks (`useEffect`, `useState`) para gestionar el ciclo de vida de las pe
 
 ### D. Formulario de Contacto
 Formulario en la ruta `/contacto` con validación en tiempo real gracias a **Formik** y **Yup**. Incluye feedback visual de éxito con **SweetAlert2** al enviar el formulario correctamente.
+
+### E. Mejoras de Diseño y "Wow Factor"
+Se implementaron mejoras visuales y de experiencia de usuario para destacar el proyecto:
+ - **Efecto Confeti:** Al finalizar una compra exitosa, se dispara una animación de confeti utilizando la librería `canvas-confetti`.
+ - **Animaciones CSS:** Se agregaron animaciones de entrada suave (`fade-in`) para que la carga de páginas sea más fluida y agradable.
+ - **Scrollbar Personalizado:** Se personalizó la barra de desplazamiento para que coincida con la estética de la aplicación.
+
 
 
 ## 6. Despliegue
